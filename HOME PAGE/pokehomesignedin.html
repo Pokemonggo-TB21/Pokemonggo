@@ -9,9 +9,11 @@
     
     <title>POKEMONGGO HOME PAGE</title>
     
+
 </head>
 <body>
     
+    <!-- Navbar -->
     <div class="navbar">
         <div class="left-section">
             <div class="logo">
@@ -24,9 +26,11 @@
             </div>
             <div class="nav-links">
                 <a href="#how-it-works">Features & Activities</a>
+                <a href="#faq">FAQ</a>
                 <a href="#videos">Videos</a>
                 <a href="#download">Download</a>
-                <a href="https://rainmazino.github.io/it0063/Pokemon%20Store/store.html">Store</a>
+                <a href="#store">Store</a>
+                <a href="#team">Team</a>
             </div>
         </div>
         <div class="auth-buttons">
@@ -35,6 +39,7 @@
         </div>
     </div>
 
+    <!-- Header -->
     <header>
         <img src="ash_pika.png">
         <div class="left">
@@ -51,20 +56,20 @@
     <div class="video-section">
         <div class="video-wrapper">
             <div class="video-container">
-                <iframe 
-                    class="mbr-background-video" 
-                    frameborder="0" 
-                    allowfullscreen="" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    width="1200" 
-                    height="675" 
-                    src="https://www.youtube.com/embed/-bE0BfKKCfg?autoplay=1&mute=0&controls=0&enablejsapi=1&allowfullscreen=true&iv_load_policy=3&modestbranding=1&origin=https%3A%2F%2Fa.mobirise.com&rel=0&mode=transparent&showinfo=0&html5=1&version=3&playerapiid=iframe_YTP_1624972482514&widget_referrer=https%3A%2F%2Fa.mobirise.com%2F&widgetid=1&forigin=https%3A%2F%2Fa.mobirise.com%2F&aoriginsup=1&aorigins=https%3A%2F%2Fa.mobirise.com&gporigin=https%3A%2F%2Fa.mobirise.com%2F&vf=1&start=7200">
-                </iframe>
+                <video 
+                autoplay 
+                loop 
+                controls
+                playsinline
+                class="mbr-background-video">
+                <source src="pokebigvid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
             </div>
         </div>
     </div>
 
+    <!-- Infinite Scrolling Text -->
     <div class="wrapper">
         <div class="marquee">
             <p>
@@ -121,6 +126,49 @@
                 </div>
                 <h3>Trading</h3>
                 <p>Trade Pokémon with other Trainers, build your collection, and help complete each other's Pokédex entries.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq"faq>
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How do I start playing Pokémon GO?</h3>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Download the app from your device's app store, create an account, customize your trainer, and you're ready to start catching Pokémon in the real world!</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Is Pokémon GO free to play?</h3>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, Pokémon GO is free to download and play. Optional in-game purchases are available for items and upgrades.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How do I catch Pokémon?</h3>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+                <div class="faq-answer">
+                    <p>When you encounter a Pokémon, tap on it to enter catch mode. Swipe Poké Balls toward the Pokémon to catch it. Timing and accuracy matter!</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What are PokéStops?</h3>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+                <div class="faq-answer">
+                    <p>PokéStops are real-world locations where you can collect items like Poké Balls, eggs, and other useful items. They refresh every few minutes.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -201,6 +249,45 @@
         <i class='bx bx-up-arrow-alt'></i>
     </button>
 
+    <!-- Meet The Team Section -->
+    <section class="team-section" id="team">
+            <h2>Meet Our Team</h2>
+            <div class="team-container">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="Darev_barong.JPG" alt="Team Leader Spark">
+                    </div>
+                    <h3>Cayabyab</h3>
+                    <p class="member-role">Team Instinct Leader</p>
+                    <p class="member-desc">Leader of Team Instinct, Spark trusts his instincts about Pokémon training and values hatching eggs.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="Darev_barong.JPG" alt="Team Leader Blanche">
+                    </div>
+                    <h3>Buscano</h3>
+                    <p class="member-role">Team Mystic Leader</p>
+                    <p class="member-desc">Leader of Team Mystic, Blanche takes an analytical approach to Pokémon research and evolution.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="Darev_barong.JPG" alt="Team Leader Candela">
+                    </div>
+                    <h3>Candela</h3>
+                    <p class="member-role">Team Valor Leader</p>
+                    <p class="member-desc">Leader of Team Valor, Candela believes in strengthening Pokémon through training and battling.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="Darev_barong.JPG" alt="Professor Willow">
+                    </div>
+                    <h3>Professor Willow</h3>
+                    <p class="member-role">Lead Researcher</p>
+                    <p class="member-desc">The primary researcher in Pokémon GO, guiding trainers in their journey and discoveries.</p>
+                </div>
+            </div>
+    </section>
+    
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
@@ -237,5 +324,6 @@
             </div>
         </div>
     </footer>
+
 </body>
 </html>
