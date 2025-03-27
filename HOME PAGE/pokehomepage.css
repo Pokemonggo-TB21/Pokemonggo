@@ -435,10 +435,12 @@ header img{
     max-width: 100%;
     height: 40px;
     overflow: hidden;
-    background-color: #20232b;
+    /* background-color: #20232b; */
     padding-top: 2px;
     align-items: center;
     justify-content: center;
+    border-top: #fecb04 2px solid;
+    border-bottom: #fecb04 2px solid;
 }
 
 .marquee {
