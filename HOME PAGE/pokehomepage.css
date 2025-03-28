@@ -13,7 +13,9 @@ body {
     background: url('bg2.png') no-repeat center center fixed;
     background-size: cover;
 }
-
+body {
+    cursor: url('pokeball.png'), auto;   
+  }
 /* Scrollbar Styles */
 ::-webkit-scrollbar {
     width: 12px;
@@ -227,21 +229,20 @@ header img {
 .video-container {
     position: relative;
     width: 100%;
-    height: 0;
-    padding-bottom: 55%;
+    height: 675px;
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     border: 3px solid #fff;
 }
 
-.video-container video {
+.video-container iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    border: none;
 }
 
 /* Marquee Section */
@@ -750,39 +751,6 @@ header img {
     margin-right: 5px;
 }
 
-/* Scroll to Top Button */
-.scroll-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #fecb04;
-    color: #20232b;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    cursor: pointer;
-    border: none;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1000;
-}
-
-.scroll-to-top.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-.scroll-to-top:hover {
-    transform: translateY(-5px);
-    background: #fff;
-}
-
 /* Team Section */
 .team-section {
     padding: 20px 20px 50px;
@@ -980,7 +948,38 @@ header img {
     line-height: 1.6;
 }
 
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #fecb04;
+    color: #20232b;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
 
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px);
+    background: #fff;
+}
 
 /* Responsive Styles */
 @media screen and (max-width: 992px) {
@@ -1059,4 +1058,19 @@ header img {
         margin-bottom: 40px;
     }
 
+    .video-wrapper {
+        padding: 30px 20px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .video-wrapper {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .video-container {
+        height: 56.25vw;
+    }
 }
