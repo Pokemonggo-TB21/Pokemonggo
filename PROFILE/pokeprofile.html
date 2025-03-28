@@ -1,1 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pokehomepage.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script defer src="pokehomepage.js"></script>
+    <link rel="icon" href="https://storage.googleapis.com/platform-webstore-rel-assets/pgo/site_assets/favicon.ico" style="width: 200%;">
+    <title>Pokémong Go!</title>
+    
 
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="left-section">
+            <div class="logo">
+                <a href="pokehomesignedin.html"><img src="POKELOGO.png" alt="Pokémon GO Logo"></a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#how-it-works">Features & Activities</a>
+                <a href="#faq">FAQ</a>
+                <a href="#videos">Videos</a>
+                <a href="#download">Download</a>
+                <a href="https://rainmazino.github.io/it0063/Pokemon%20Store/store.html">Store</a>
+                <a href="#team">Team</a>
+            </div>
+        </div>
+        <div class="auth-buttons">
+            <a href="profile.html" class="profile">My Profile</a>
+            <a href="pokehomepage.html" class="signout">Sign Out</a>
+        </div>
+    </div>
+
+  <!-- Profile Section -->
+    <div class="profile-section">
+    <div class="profile-card">
+            <div class="profile-header">
+                <div class="profile-pic-container">
+            <img src="jj.jpg" alt="Profile Picture" class="profile-pic">
+                    <div class="level-badge">
+                        <span class="level-number">07</span>
+                        <span class="level-text">LEVEL</span>
+                    </div>
+                </div>
+                <div class="profile-info">
+                    <h1 class="username">MONGGO21</h1>
+                    <div class="trainer-id-container">
+                        <span class="trainer-id-label">Trainer ID:</span>
+                        <span class="trainer-id" id="trainerId">Generating...</span>
+                    </div>
+                    <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;"></div>
+                        </div>
+                        <span class="xp-text">60% to Level 8</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <i class='bx bx-walk'></i>
+                        <div class="stat-info">
+                            <span class="stat-value">2.5 KM</span>
+                            <span class="stat-label">Distance Walked</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class='bx bx-pokemon'></i>
+                        <div class="stat-info">
+                            <span class="stat-value">300</span>
+                            <span class="stat-label">Pokémon Caught</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class='bx bx-map'></i>
+                        <div class="stat-info">
+                            <span class="stat-value">120 XP</span>
+                            <span class="stat-label">Position View</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class='bx bx-star'></i>
+                        <div class="stat-info">
+                            <span class="stat-value">1,584,000</span>
+                            <span class="stat-label">Total XP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievements Section -->
+            <div class="achievements-section">
+                <h2 class="section-title">Achievements</h2>
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <i class='bx bx-trophy'></i>
+                        <div class="achievement-info">
+                            <h3>First Catch</h3>
+                            <p>Caught your first Pokémon</p>
+                        </div>
+                        <div class="achievement-progress">
+                            <div class="progress-circle complete"></div>
+                        </div>
+                    </div>
+                    <div class="achievement-card">
+                        <i class='bx bx-medal'></i>
+                        <div class="achievement-info">
+                            <h3>PokéMaster</h3>
+                            <p>Caught 100 different Pokémon</p>
+                        </div>
+                        <div class="achievement-progress">
+                            <div class="progress-circle" style="--progress: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="achievement-card">
+                        <i class='bx bx-badge-check'></i>
+                        <div class="achievement-info">
+                            <h3>Egg Master</h3>
+                            <p>Hatched 50 eggs</p>
+                        </div>
+                        <div class="achievement-progress">
+                            <div class="progress-circle" style="--progress: 30%"></div>
+                        </div>
+                    </div>
+                    <div class="achievement-card">
+                        <i class='bx bx-gift'></i>
+                        <div class="achievement-info">
+                            <h3>Gift Giver</h3>
+                            <p>Sent 100 gifts to friends</p>
+                        </div>
+                        <div class="achievement-progress">
+                            <div class="progress-circle" style="--progress: 45%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transaction History Section -->
+    <section class="transaction-section">
+        <h2 class="transaction-title">Transaction History</h2>
+        <div class="transaction-grid">
+            <!-- Purchase Transaction -->
+            <div class="transaction-card">
+                <div class="transaction-header">
+                    <span class="transaction-id">#1234</span>
+                    <span class="transaction-date">March 28, 2024</span>
+                </div>
+                <div class="transaction-details">
+                    <span class="transaction-type type-purchase">Purchase</span>
+                    <div class="transaction-amount amount-positive">₱59.00</div>
+                    <p class="transaction-description">Bug Out Ultra Ticket Box</p>
+                </div>
+            </div>
+
+            <!-- Sale Transaction -->
+            <div class="transaction-card">
+                <div class="transaction-header">
+                    <span class="transaction-id">#1235</span>
+                    <span class="transaction-date">March 27, 2024</span>
+                </div>
+                <div class="transaction-details">
+                    <span class="transaction-type type-sale">Sale</span>
+                    <div class="transaction-amount amount-positive">+$75.00</div>
+                    <p class="transaction-description">Sold Charizard card</p>
+                </div>
+            </div>
+
+            <!-- Trade Transaction -->
+            <div class="transaction-card">
+                <div class="transaction-header">
+                    <span class="transaction-id">#1236</span>
+                    <span class="transaction-date">March 26, 2024</span>
+                </div>
+                <div class="transaction-details">
+                    <span class="transaction-type type-trade">Trade</span>
+                    <div class="transaction-amount amount-positive">+$100.00</div>
+                    <p class="transaction-description">Traded Mewtwo for Lugia</p>
+                </div>
+            </div>
+
+            <!-- Purchase Transaction -->
+            <div class="transaction-card">
+                <div class="transaction-header">
+                    <span class="transaction-id">#1237</span>
+                    <span class="transaction-date">March 25, 2024</span>
+                </div>
+                <div class="transaction-details">
+                    <span class="transaction-type type-purchase">Purchase</span>
+                    <div class="transaction-amount amount-negative">-$30.00</div>
+                    <p class="transaction-description">Bought Pokéballs pack</p>
+                </div>
+            </div>
+
+            <!-- Sale Transaction -->
+            <div class="transaction-card">
+                <div class="transaction-header">
+                    <span class="transaction-id">#1238</span>
+                    <span class="transaction-date">March 24, 2024</span>
+                </div>
+                <div class="transaction-details">
+                    <span class="transaction-type type-sale">Sale</span>
+                    <div class="transaction-amount amount-positive">+$45.00</div>
+                    <p class="transaction-description">Sold Gyarados card</p>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logos">
+                <a href="https://nianticlabs.com/" target="_blank">
+                    <img src="NIANTIC.png" alt="Niantic Logo" class="niantic-logo">
+                </a>
+                <a href="https://www.pokemon.com/" target="_blank">
+                    <img src="THEPOKEMONGOCOMPANY.png" alt="The Pokemon Company Logo" class="pokemon-logo">
+                </a>
+            </div>
+
+            <div class="footer-social">
+                <a href="https://www.youtube.com/@pokemongo" target="_blank"><i class='bx bxl-youtube'></i></a>
+                <a href="https://www.facebook.com/PokemonGO/" target="_blank"><i class='bx bxl-facebook'></i></a>
+                <a href="https://www.instagram.com/pokemongoapp/" target="_blank"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.tiktok.com/@pokemongo" target="_blank"><i class='bx bxl-tiktok'></i></a>
+            </div>
+
+            <div class="footer-links">
+                <a href="https://nianticlabs.com/terms" target="_blank">Terms of Service</a>
+                <a href="https://nianticlabs.com/privacy" target="_blank">Privacy Policy</a>
+                <a href="https://nianticlabs.com/copyright" target="_blank">Copyright Policy</a>
+                <a href="https://nianticlabs.com/guidelines" target="_blank">Player Guidelines</a>
+            </div>
+
+            <div class="footer-disclaimer">
+                <strong>Disclaimer:</strong>
+                <p>All images used on this website are the property of Niantic, Inc. This project is for educational purposes only, and no copyright infringement is intended.</p>
+            </div>
+
+            <div class="footer-copyright">
+                <p>©2023 Niantic, Inc. ©2023 Pokémon. ©1995–2023 Nintendo / Creatures Inc. / GAME FREAK inc. Pokémon and Pokémon character names are trademarks of Nintendo. Apple and the Apple logo are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc. Android, Google Play and the Google Play logo are trademarks of Google LLC. During gameplay, please be aware of your surroundings and play safely.</p>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
