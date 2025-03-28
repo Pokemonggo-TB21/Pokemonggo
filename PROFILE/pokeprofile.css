@@ -673,17 +673,6 @@ thead tr {
     border: 1px solid rgba(46, 204, 113, 0.3);
 }
 
-.type-sale {
-    background: rgba(231, 76, 60, 0.2);
-    color: #e74c3c;
-    border: 1px solid rgba(231, 76, 60, 0.3);
-}
-
-.type-trade {
-    background: rgba(254, 203, 4, 0.2);
-    color: #fecb04;
-    border: 1px solid rgba(254, 203, 4, 0.3);
-}
 
 .transaction-amount {
     font-family: 'Archivo Black', sans-serif;
@@ -695,9 +684,6 @@ thead tr {
     color: #2ecc71;
 }
 
-.amount-negative {
-    color: #e74c3c;
-}
 
 .transaction-description {
     color: rgba(255, 255, 255, 0.8);
