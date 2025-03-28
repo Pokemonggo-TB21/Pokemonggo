@@ -1,4 +1,3 @@
-// Mobile Navigation
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 const authButtons = document.querySelector('.auth-buttons');
@@ -8,7 +7,6 @@ hamburger.addEventListener('click', () => {
     authButtons.classList.toggle('active');
 });
 
-// Close mobile menu when clicking outside
 document.addEventListener('click', (e) => {
     if (!hamburger.contains(e.target) && !navLinks.contains(e.target) && !authButtons.contains(e.target)) {
         navLinks.classList.remove('active');
@@ -16,7 +14,6 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Close mobile menu when clicking a link
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         navLinks.classList.remove('active');
@@ -24,7 +21,6 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// Scroll to Top Button
 const scrollToTopBtn = document.getElementById('scroll-to-top');
 let lastScrollTop = 0;
 
@@ -32,7 +28,6 @@ window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
     const headerHeight = document.querySelector('header').offsetHeight;
 
-    // Show button when past header and scrolling up
     if (currentScroll > headerHeight) {
         if (currentScroll < lastScrollTop) {
             scrollToTopBtn.classList.add('visible');
