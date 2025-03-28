@@ -120,7 +120,7 @@ a{
 }
 
 /* Hamburger Menu */
-.hamburger {
+/* .hamburger {
     display: none;
     cursor: pointer;
     padding: 10px;
@@ -133,7 +133,7 @@ a{
     background-color: #20232b;
     margin: 5px 0;
     transition: 0.3s;
-}
+} */
 
 /* Profile Section */
 .profile-section {
