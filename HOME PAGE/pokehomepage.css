@@ -14,8 +14,13 @@ body {
     background-size: cover;
 }
 body {
-    cursor: url('pokeball.png'), auto;   
+    cursor: url(https://cdn.custom-cursor.com/db/19717/32/web-media-pokemon-pointer.png) , default !important;
   }
+
+a{
+    cursor: url(https://cdn.custom-cursor.com/db/19718/32/web-media-pokemon-cursor.png), pointer !important;
+}
+
 /* Scrollbar Styles */
 ::-webkit-scrollbar {
     width: 12px;
