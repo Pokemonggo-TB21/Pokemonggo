@@ -6,17 +6,18 @@
     <link rel="stylesheet" href="pokehomepage.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script defer src="pokehomepage.js"></script>
-    
-    <title>POKEMONGGO HOME PAGE</title>
-    
+    <link rel="icon" href="pokeball.png" style="width: 200%;">
+    <title>Pokémong Go! Home Page</title>
 
 </head>
 <body>
     
+    <!-- Navbar -->
     <div class="navbar">
         <div class="left-section">
             <div class="logo">
-                <a href="pokehomesignedin.html"><img src="POKELOGO.png" alt="Pokémon GO Logo"></a>
+                
+                <a href="pokehomepage.html"><img src="POKELOGO.png" alt="Pokémon GO Logo"></a>
             </div>
             <div class="hamburger">
                 <span></span>
@@ -24,7 +25,7 @@
                 <span></span>
             </div>
             <div class="nav-links">
-                <a href="#how-it-works">Features & Activities</a>
+                <a href="#how-it-works">How it works</a>
                 <a href="#faq">FAQ</a>
                 <a href="#videos">Videos</a>
                 <a href="#download">Download</a>
@@ -33,19 +34,20 @@
             </div>
         </div>
         <div class="auth-buttons">
-            <a href="profile.html" class="profile">My Profile</a>
-            <a href="pokehomepage.html" class="signout">Sign Out</a>
+            <a class="signin" href="#">Get started</a>
+            <a href="pokehomesignedin.html">Login</a>
         </div>
     </div>
 
+    <!-- Header -->
     <header>
         <img src="ash_pika.png">
         <div class="left">
-            <h1>Welcome back, Trainer! Continue your journey in <span>POKÉMON GO</span></h1>
-            <p>Your adventure awaits! Catch more Pokémon, battle in gyms, and connect with trainers worldwide. What will you discover today?</p>
-            <a href="pokemongo://">
+            <h1>Explore, Catch, and Battle with <span>POKÉMON GO</span></h1>
+            <p>Join millions of Trainers worldwide and embark on an adventure in the real world with Pokémong Go! Discover Pokémon, team up with friends, and become the ultimate Trainer.</p>
+            <a href="sigin.html">
                 <i class='bx bxs-right-arrow-circle'></i>
-                <span>Open App</span>
+                <span>Register Now!</span>
             </a>
         </div>
     </header>
@@ -54,11 +56,11 @@
     <div class="video-section">
         <div class="video-wrapper">
             <div class="video-container">
-                <iframe src="https://drive.google.com/file/d/1j-KEVUNQdNJy923kTQEThSkySDv92iBC/preview?"></iframe>
-            </div>
+                <iframe src="https://drive.google.com/file/d/1j-KEVUNQdNJy923kTQEThSkySDv92iBC/preview" allow="autoplay"></iframe>            </div>
         </div>
     </div>
 
+    <!-- Infinite Scrolling Text -->
     <div class="wrapper">
         <div class="marquee">
             <p>
@@ -72,7 +74,7 @@
 
     <!-- How It Works Section -->
     <section id="how-it-works" class="how-it-works">
-        <h2>Features & Activities</h2>
+        <h2>How It Works</h2>
         <div class="cards-container">
             <div class="card">
                 <div class="card-icon">
@@ -85,84 +87,83 @@
                 <div class="card-icon">
                     <i class='bx bx-target-lock'></i>
                 </div>
-                <h3>Daily Tasks</h3>
-                <p>Complete daily research tasks, catch your daily Pokémon, and earn special rewards. Track your progress and achievements.</p>
+                <h3>Catch</h3>
+                <p>Use Poké Balls to catch Pokémon you encounter. Different types of Poké Balls increase your chances of catching rare Pokémon.</p>
             </div>
             <div class="card">
                 <div class="card-icon">
                     <i class='bx bx-group'></i>
                 </div>
-                <h3>Raid Battles</h3>
-                <p>Join forces with other Trainers to take on powerful Raid Battles. Coordinate with your team and earn exclusive rewards.</p>
+                <h3>Train Together</h3>
+                <p>Join forces with other Trainers to take on powerful Raid Battles and earn special rewards.</p>
             </div>
             <div class="card">
                 <div class="card-icon">
                     <i class='bx bx-trophy'></i>
                 </div>
-                <h3>Battle League</h3>
-                <p>Compete in the GO Battle League, climb the ranks, and prove yourself as the ultimate Trainer in PvP battles.</p>
+                <h3>Become Stronger</h3>
+                <p>Power up your Pokémon, evolve them, and train them to become the ultimate Pokémon Master.</p>
             </div>
             <div class="card">
                 <div class="card-icon">
                     <i class='bx bx-gift'></i>
                 </div>
-                <h3>Events</h3>
-                <p>Participate in special events, Community Days, and seasonal celebrations to catch rare Pokémon and earn exclusive rewards.</p>
+                <h3>Special Events</h3>
+                <p>Participate in exciting events, Community Days, and seasonal celebrations to catch rare Pokémon and earn exclusive rewards.</p>
             </div>
             <div class="card">
                 <div class="card-icon">
                     <i class='bx bx-world'></i>
                 </div>
-                <h3>Trading</h3>
-                <p>Trade Pokémon with other Trainers, build your collection, and help complete each other's Pokédex entries.</p>
+                <h3>Global Community</h3>
+                <p>Connect with Trainers worldwide, trade Pokémon, and compete in global challenges to unlock special features and rewards.</p>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="faq-section" id="faq"faq>
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-container">
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>How do I level up faster?</h3>
-                    <i class='bx bx-chevron-down'></i>
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I start playing Pokémon GO?</h3>
+                        <i class='bx bx-chevron-down'></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Download the app from your device's app store, create an account, customize your trainer, and you're ready to start catching Pokémon in the real world!</p>
+                    </div>
                 </div>
-                <div class="faq-answer">
-                    <p>Use Lucky Eggs during evolution sprees, participate in raids, complete research tasks, and make excellent throws to maximize XP gain. Add friends and increase friendship levels for huge XP bonuses!</p>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is Pokémon GO free to play?</h3>
+                        <i class='bx bx-chevron-down'></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, Pokémon GO is free to download and play. Optional in-game purchases are available for items and upgrades.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I catch Pokémon?</h3>
+                        <i class='bx bx-chevron-down'></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>When you encounter a Pokémon, tap on it to enter catch mode. Swipe Poké Balls toward the Pokémon to catch it. Timing and accuracy matter!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What are PokéStops?</h3>
+                        <i class='bx bx-chevron-down'></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>PokéStops are real-world locations where you can collect items like Poké Balls, eggs, and other useful items. They refresh every few minutes.</p>
+                    </div>
                 </div>
             </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>How do I get more Stardust?</h3>
-                    <i class='bx bx-chevron-down'></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Catch lots of Pokémon (especially weather-boosted ones), hatch eggs, complete research tasks, and participate in events. Star Pieces can boost your Stardust earnings by 50%.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>What's the best way to win raids?</h3>
-                    <i class='bx bx-chevron-down'></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Build teams that counter the raid boss's type, power up your best counters, coordinate with other trainers, and use appropriate battle parties. Remote raid passes can help you join raids from anywhere!</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>How do I improve in PvP battles?</h3>
-                    <i class='bx bx-chevron-down'></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Learn type effectiveness, practice timing your shields and charge moves, build balanced teams, and understand the meta for each league. IV spreads matter differently in PvP than in raids.</p>
-                </div>
-            </div>
-        </div>
     </section>
-
-
+    
     <!-- Video Navigation Section -->
     <section id="videos" class="video-nav-section">
         <h2>Watch Gameplay Videos</h2>
@@ -189,8 +190,8 @@
     <!-- Download Section -->
     <section id="download" class="download-section">
         <div class="store-buttons">
-            <h2>Share the Adventure</h2>
-            <p>Invite your friends to join Pokémon GO!</p>
+            <h2>Download Pokémon GO</h2>
+            <p>Start your Pokémon adventure today!</p>
             <div class="store-links">
                 <a href="https://apps.apple.com/vc/app/pok%C3%A9mon-go/id1094591345" class="store-button app-store" target="_blank">
                     <img src="apple_dl.png" alt="Download on the App Store">
@@ -227,10 +228,13 @@
                     <p>Save with our special item bundles and limited-time offers.</p>
                 </div>
             </div>
-            <a href="https://rainmazino.github.io/it0063/Pokemon%20Store/store.html" class="store-cta" target="_blank">
-                <span>Visit Store</span>
-                <i class='bx bx-right-arrow-alt'></i>
-            </a>
+            <div class="store-signin-prompt">
+                <p>Please sign in to access the store</p>
+                <a href="signin.html" class="store-cta">
+                    <i class='bx bx-user'></i>
+                    <span>Sign In to Shop</span>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -239,15 +243,15 @@
         <i class='bx bx-up-arrow-alt'></i>
     </button>
 
-        <!-- Meet The Team Section -->
-        <section class="team-section" id="team">
+    <!-- Meet The Team Section -->
+    <section class="team-section" id="team">
             <h2>Meet Our Team</h2>
             <div class="team-container">
                 <div class="team-member">
                     <div class="member-image">
                         <img src="Darev_barong.JPG" alt="Team Leader Spark">
                     </div>
-                    <h3>Cayabyab</h3>
+                    <h3>BUSCANO</h3>
                     <p class="member-role">Team Instinct Leader</p>
                     <p class="member-desc">Leader of Team Instinct, Spark trusts his instincts about Pokémon training and values hatching eggs.</p>
                 </div>
@@ -255,7 +259,7 @@
                     <div class="member-image">
                         <img src="Darev_barong.JPG" alt="Team Leader Blanche">
                     </div>
-                    <h3>Buscano</h3>
+                    <h3>CAYABYAB</h3>
                     <p class="member-role">Team Mystic Leader</p>
                     <p class="member-desc">Leader of Team Mystic, Blanche takes an analytical approach to Pokémon research and evolution.</p>
                 </div>
@@ -263,7 +267,7 @@
                     <div class="member-image">
                         <img src="Darev_barong.JPG" alt="Team Leader Candela">
                     </div>
-                    <h3>Candela</h3>
+                    <h3>DONATO</h3>
                     <p class="member-role">Team Valor Leader</p>
                     <p class="member-desc">Leader of Team Valor, Candela believes in strengthening Pokémon through training and battling.</p>
                 </div>
@@ -271,13 +275,13 @@
                     <div class="member-image">
                         <img src="Darev_barong.JPG" alt="Professor Willow">
                     </div>
-                    <h3>Professor Willow</h3>
+                    <h3>DURAN</h3>
                     <p class="member-role">Lead Researcher</p>
                     <p class="member-desc">The primary researcher in Pokémon GO, guiding trainers in their journey and discoveries.</p>
                 </div>
             </div>
-        </section>
-    
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
