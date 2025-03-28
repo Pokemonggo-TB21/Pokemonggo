@@ -12,6 +12,8 @@
 body {
     background: url('HERO_BG.png') no-repeat center center fixed;
     background-size: cover;
+    font-family: 'Poppins', sans-serif;
+
 }
 body {
     cursor: url(https://cdn.custom-cursor.com/db/19717/32/web-media-pokemon-pointer.png) , default !important;
