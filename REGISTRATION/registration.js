@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Get DOM elements
     const container = document.querySelector('.container');
     const signUpBtn = document.getElementById('signUpBtn');
     const signInBtn = document.getElementById('signInBtn');
@@ -10,9 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const passwordRequirementsPopup = document.querySelector('.password-requirements-popup');
     const closePopupBtn = document.querySelector('.close-popup');
     const passwordInput = document.getElementById('password');
+    const confirmPassword = document.getElementById('confirmPassword');
     const passwordValidationElement = document.getElementById('passwordValidation');
+    const loginPasswordInput = document.getElementById('loginPassword');
+    const loginPasswordValidation = document.getElementById('loginPasswordValidation');
+    const signInForm = document.querySelector('.sign-in-form form');
+    const signUpForm = document.querySelector('.sign-up-form form');
 
-    // Panel switching
     signUpBtn.addEventListener('click', () => {
         container.classList.add('right-panel-active');
     });
@@ -40,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Password requirements popup
     if (passwordInfoBtn && passwordRequirementsPopup) {
         passwordInfoBtn.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -54,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
             passwordRequirementsPopup.classList.remove('active');
         });
 
-        // Close popup when clicking outside
         document.addEventListener('click', (e) => {
             if (!passwordRequirementsPopup.contains(e.target) && 
                 !passwordInfoBtn.contains(e.target)) {
@@ -62,18 +63,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Prevent popup from closing when clicking inside it
         passwordRequirementsPopup.addEventListener('click', (e) => {
             e.stopPropagation();
         });
     }
 
-    // Generate a random number between min and max (inclusive)
     function getRandomNumber(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    // Generate a trainer ID in the format #### #### ####
     function generateTrainerId() {
         let id = '';
         for (let i = 0; i < 3; i++) {
@@ -85,84 +83,129 @@ document.addEventListener('DOMContentLoaded', () => {
         return id;
     }
 
-    // Set initial trainer ID
-    trainerIdInput.value = generateTrainerId();
-
-    // Generate new ID on button click
-    generateIdBtn.addEventListener('click', () => {
+    if (trainerIdInput) {
         trainerIdInput.value = generateTrainerId();
-        
-        // Add rotation animation
-        generateIdBtn.style.transform = 'rotate(180deg)';
-        setTimeout(() => {
-            generateIdBtn.style.transform = 'rotate(0)';
-        }, 500);
-    });
+    }
 
-    // Form submission handling
-    const signInForm = document.querySelector('.sign-in-form form');
-    const signUpForm = document.querySelector('.sign-up-form form');
+    if (generateIdBtn) {
+        generateIdBtn.addEventListener('click', () => {
+            trainerIdInput.value = generateTrainerId();
+            
+            // Add rotation animation
+            generateIdBtn.style.transform = 'rotate(180deg)';
+            setTimeout(() => {
+                generateIdBtn.style.transform = 'rotate(0)';
+            }, 500);
+        });
+    }
 
-    signInForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const email = document.getElementById('loginEmail').value;
-        const password = document.getElementById('loginPassword').value;
-        const remember = document.getElementById('remember').checked;
-
-        // Add your sign-in logic here
-        console.log('Sign in attempt:', { email, password, remember });
-    });
-
-    // Password validation
-    const passwordValidators = {
-        length: (password) => password.length >= 8,
-        uppercase: (password) => /[A-Z]/.test(password),
-        lowercase: (password) => /[a-z]/.test(password),
-        number: (password) => /[0-9]/.test(password),
-        special: (password) => /[!@#$%^&*(),.?":{}|<>]/.test(password)
+    const validationRules = {
+        length: { regex: /.{8,}/, message: 'Password must be at least 8 characters long' },
+        uppercase: { regex: /[A-Z]/, message: 'Password must contain at least one uppercase letter' },
+        lowercase: { regex: /[a-z]/, message: 'Password must contain at least one lowercase letter' },
+        number: { regex: /[0-9]/, message: 'Password must contain at least one number' },
+        special: { regex: /[!@#$%^&*(),.?":{}|<>]/, message: 'Password must contain at least one special character' }
     };
 
-    const validationMessages = {
-        length: 'Password must be at least 8 characters long',
-        uppercase: 'Password must contain at least one uppercase letter',
-        lowercase: 'Password must contain at least one lowercase letter',
-        number: 'Password must contain at least one number',
-        special: 'Password must contain at least one special character'
-    };
-
-    passwordInput.addEventListener('input', (e) => {
-        const password = e.target.value;
-        let isValid = true;
-        let message = '';
-
-        // Check each requirement
-        for (const [requirement, validator] of Object.entries(passwordValidators)) {
-            if (!validator(password)) {
-                isValid = false;
-                message = validationMessages[requirement];
-                break;
+    if (loginPasswordInput) {
+        loginPasswordInput.addEventListener('input', function() {
+            if (this.value === '') {
+                this.style.borderColor = '#fecb04';
+                loginPasswordValidation.textContent = '';
+                loginPasswordValidation.classList.remove('visible');
+                return;
             }
-        }
 
-        // Update validation message
-        if (password.length > 0) {
+            if (this.value.length < 8) {
+                this.style.borderColor = '#ff4444';
+                loginPasswordValidation.textContent = 'Password must be at least 8 characters long';
+                loginPasswordValidation.classList.add('visible');
+            } else {
+                this.style.borderColor = '#00C851';
+                loginPasswordValidation.textContent = '';
+                loginPasswordValidation.classList.remove('visible');
+            }
+        });
+    }
+
+    if (passwordInput) {
+        passwordInput.addEventListener('input', function() {
+            let isValid = true;
+            let message = '';
+
+            if (this.value === '') {
+                this.style.borderColor = '#fecb04';
+                passwordValidationElement.textContent = '';
+                passwordValidationElement.classList.remove('visible');
+                return;
+            }
+
+            for (const [rule, { regex, message: ruleMessage }] of Object.entries(validationRules)) {
+                if (!regex.test(this.value)) {
+                    isValid = false;
+                    message = ruleMessage;
+                    this.style.borderColor = '#ff4444';
+                    break;
+                }
+            }
+
+            if (isValid) {
+                this.style.borderColor = '#00C851';
+            }
+
             passwordValidationElement.textContent = message;
             passwordValidationElement.classList.toggle('visible', !isValid);
-        } else {
-            passwordValidationElement.textContent = '';
-            passwordValidationElement.classList.remove('visible');
-        }
-    });
+        });
+    }
 
-    // Form submission
-    signUpForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const trainerId = trainerIdInput.value;
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-        const ign = document.getElementById('ign').value;
+    if (confirmPassword) {
+        confirmPassword.addEventListener('input', function() {
+            if (this.value === '') {
+                this.style.borderColor = '#fecb04';
+                return;
+            }
 
-        // Add your sign-up logic here
-        console.log('Sign up attempt:', { trainerId, email, password, ign });
-    });
+            if (this.value !== passwordInput.value) {
+                this.setCustomValidity('Passwords do not match');
+                this.style.borderColor = '#ff4444';
+            } else {
+                this.setCustomValidity('');
+                this.style.borderColor = '#00C851';
+            }
+        });
+    }
+
+    if (signInForm) {
+        signInForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            window.location.href = 'https://pokemonggo-tb21.github.io/Pokemonggo/HOME%20PAGE/pokehomesignedin.html';
+        });
+    }
+
+    if (signUpForm) {
+        signUpForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            if (passwordInput.value !== confirmPassword.value) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            let isValid = true;
+            for (const [rule, { regex }] of Object.entries(validationRules)) {
+                if (!regex.test(passwordInput.value)) {
+                    isValid = false;
+                    break;
+                }
+            }
+
+            if (!isValid) {
+                alert('Please ensure your password meets all requirements!');
+                return;
+            }
+            
+            // If all validations pass, proceed to dashboard
+            window.location.href = 'https://pokemonggo-tb21.github.io/Pokemonggo/HOME%20PAGE/pokehomesignedin.html';
+        });
+    }
 });
