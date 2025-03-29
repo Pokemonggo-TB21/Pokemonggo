@@ -17,7 +17,6 @@ body {
     padding: 20px;
     position: relative;
     cursor: url(https://cdn.custom-cursor.com/db/19717/32/web-media-pokemon-pointer.png) , default !important;
-
 }
 
 .floating-logo {
@@ -665,5 +664,29 @@ input:focus {
     .requirement {
         font-size: 0.8rem;
     }
+}
+
+.password-fields-container {
+    display: flex;
+    gap: 1rem;
+    /* margin-bottom: .5rem; */
+}
+
+.password-fields-container .form-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+/* Password matching feedback */
+.sign-up-form .password-input input {
+    border-color: #fecb04;
+}
+
+.sign-up-form .password-input input:not(:valid) {
+    border-color: #ff4444;
+}
+
+.sign-up-form .password-input input:valid {
+    border-color: #00C851;
 }
   
