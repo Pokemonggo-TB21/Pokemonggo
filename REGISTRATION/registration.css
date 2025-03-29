@@ -16,6 +16,8 @@ body {
     background-size: cover;
     padding: 20px;
     position: relative;
+    cursor: url(https://cdn.custom-cursor.com/db/19717/32/web-media-pokemon-pointer.png) , default !important;
+
 }
 
 .floating-logo {
