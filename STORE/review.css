@@ -1,15 +1,13 @@
-/* Base styles */
 body {
     background: url('Store Images\\Store Background\\background.png') no-repeat center center fixed;
     padding-top: 100px;
 }
 
 .main-container {
-    margin-top: 2rem; /* Increased from 2rem */
+    margin-top: 2rem; 
 
 }
 
-/* Optional: Add subtle animation when scrolling down */
 .navbar {
     transition: all 0.3s ease;
     position: fixed;
@@ -61,7 +59,7 @@ body {
 
 /* Cards styling */
 .bundle-card {
-    position: relative; /* Required for absolute positioning */
+    position: relative; 
 }
 
 .bundle-card,
@@ -72,7 +70,7 @@ body {
 }
 
 .bundle-card .card-body {
-    padding: 1rem !important; /* Reduced from 1.5rem */
+    padding: 1rem !important; 
 }
 
 /* Product images */
@@ -86,7 +84,7 @@ body {
 
 .product-image {
     width: 30px !important;
-    height: 30px !important; /* Reduced from 80px */
+    height: 30px !important; 
     margin-right: 0.75rem;
 }
 
@@ -133,7 +131,7 @@ body {
 
 /* Maintain image aspect ratio */
 .main-product-img {
-    height: 200px !important; /* Reduced from 300px */
+    height: 200px !important; 
     max-height: 200px;
 }
 
@@ -154,7 +152,7 @@ body {
 
 /* Consistent item spacing */
 .bundle-item {
-    padding: 0.75rem 0 !important; /* Reduced from 1rem */
+    padding: 0.75rem 0 !important; 
     margin: 0.25rem 0 !important;
 }
 
