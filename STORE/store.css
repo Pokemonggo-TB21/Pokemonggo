@@ -499,7 +499,6 @@ p, button {
     animation-delay: 0.5s;
 }
 
-/* Rest of your structural styles */
 .modal-body {
     display: flex;
     flex-direction: column;
@@ -557,7 +556,7 @@ p, button {
 
 .badge {
     padding: 10px;
-    align-items: center; /* Changed from stretch */
+    align-items: center; 
     min-height: 60px;
 }
 
@@ -602,8 +601,8 @@ p, button {
     width: 1px;
     background: #666;
     margin: 0 15px;
-    align-self: center; /* Center vertically */
-    height: 25px; /* Relative to container */
+    align-self: center; 
+    height: 25px; 
   }
 
 .small-text {
@@ -673,7 +672,7 @@ p, button {
 
 .purchase-button {
     position: relative;
-    z-index: 2; /* Bring button to front */
+    z-index: 2; 
 }
 
 
@@ -875,7 +874,7 @@ p, button {
 }
 
 .muted-text {
-    color: #6c757d; /* Bootstrap muted color */
+    color: #6c757d; 
 }
 
 .black-text {
