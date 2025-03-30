@@ -1,11 +1,8 @@
-// Add any necessary JavaScript functionality here
-// For example, promo code validation or payment processing
 document.querySelector('.payment-button').addEventListener('click', function() {
     // Handle payment processing
     alert('Redirecting to payment gateway...');
 });
 
-// Add any necessary JavaScript functionality
 document.querySelector('.btn-primary').addEventListener('click', function() {
     // Handle payment processing
     alert('Redirecting to secure payment...');
