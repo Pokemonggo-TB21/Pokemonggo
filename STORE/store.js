@@ -1,4 +1,3 @@
-// 1.js
 function showSection(section) {
     document.getElementById('item-boxes').classList.add('d-none');
     document.getElementById('pokecoins').classList.add('d-none');
@@ -221,6 +220,9 @@ document.addEventListener('DOMContentLoaded', function() {
         limit: "1 TIME ONLY"
     };
 
+    document.getElementById("featuredModalTitle").classList.add("black-text");
+    document.getElementById("featuredPurchaseLimit").classList.add("muted-text");
+    document.getElementById("featuredPurchaseLimit").classList.add("muted-text");
     const itemBoxContainer = document.getElementById("item-box-list");
     const pokecoinContainer = document.getElementById("pokecoin-list");
 
