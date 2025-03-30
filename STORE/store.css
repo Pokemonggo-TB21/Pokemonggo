@@ -57,6 +57,9 @@ h1, h2, h3 {
     color: #2a75bb !important;
 }
 
+.featured-modal-quantity{
+    color: black;
+}
 .featured-image-container {
     display: flex;
     flex-direction: column;
@@ -869,6 +872,14 @@ p, button {
     opacity: 0.7;
     padding: 0 20px;
     line-height: 1.6;
+}
+
+.muted-text {
+    color: #6c757d; /* Bootstrap muted color */
+}
+
+.black-text {
+    color: black;
 }
 
 @media (max-width: 768px) {
