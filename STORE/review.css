@@ -1,37 +1,15 @@
+/* Base styles */
 body {
     background: url('Store Images\\Store Background\\background.png') no-repeat center center fixed;
     padding-top: 100px;
-    cursor: url(https://cdn.custom-cursor.com/db/19717/32/web-media-pokemon-pointer.png) , default !important;
-}
-
-a{
-    cursor: url(https://cdn.custom-cursor.com/db/19718/32/web-media-pokemon-cursor.png), pointer !important;
-}
-
-/* Scrollbar Styles */
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: #222b39;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #fecb04;
-    border-radius: 4px;
-    border: 3px solid rgba(32, 35, 43, 0.95);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #ffdb4d;
 }
 
 .main-container {
-    margin-top: 2rem; 
+    margin-top: 2rem; /* Increased from 2rem */
 
 }
 
+/* Optional: Add subtle animation when scrolling down */
 .navbar {
     transition: all 0.3s ease;
     position: fixed;
@@ -60,7 +38,7 @@ a{
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #2a75bb;
+    background-color: #ffc107;
     transition: width 0.3s ease;
 }
 
@@ -78,12 +56,12 @@ a{
 
 .btn-link.text-white:hover {
     transform: translateX(-5px);
-    color: #2a75bb !important;
+    color: #ffc107 !important;
 }
 
 /* Cards styling */
 .bundle-card {
-    position: relative; 
+    position: relative; /* Required for absolute positioning */
 }
 
 .bundle-card,
@@ -94,7 +72,7 @@ a{
 }
 
 .bundle-card .card-body {
-    padding: 1rem !important; 
+    padding: 1rem !important; /* Reduced from 1.5rem */
 }
 
 /* Product images */
@@ -108,7 +86,7 @@ a{
 
 .product-image {
     width: 30px !important;
-    height: 30px !important; 
+    height: 30px !important; /* Reduced from 80px */
     margin-right: 0.75rem;
 }
 
@@ -155,7 +133,7 @@ a{
 
 /* Maintain image aspect ratio */
 .main-product-img {
-    height: 200px !important; 
+    height: 200px !important; /* Reduced from 300px */
     max-height: 200px;
 }
 
@@ -176,7 +154,7 @@ a{
 
 /* Consistent item spacing */
 .bundle-item {
-    padding: 0.75rem 0 !important; 
+    padding: 0.75rem 0 !important; /* Reduced from 1rem */
     margin: 0.25rem 0 !important;
 }
 
@@ -397,6 +375,10 @@ a{
 
 #successModal .bi-check-circle-fill {
     color: #28a745;
+}
+
+#paymentToast {
+    min-width: 350px; /* Adjust as needed */
 }
 @media (max-width: 768px) {
     .main-product-img {
