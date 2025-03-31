@@ -190,9 +190,7 @@ p, button {
 }
 
 .cart-icon {
-    background: #fff;
-    border-radius: 2px;
-    padding-right: 2px;
+    color: #f8cd45;
 }
 
 .toggle-btn {
