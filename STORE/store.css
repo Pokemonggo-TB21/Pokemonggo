@@ -2,30 +2,6 @@ body {
     background: url('Store Images\\Store Background\\background.png') no-repeat center center fixed;
     background-size: cover;
     font-family: 'Poppins', sans-serif;
-    cursor: url(https://cdn.custom-cursor.com/db/19717/32/web-media-pokemon-pointer.png) , default !important;
-}
-
-a{
-    cursor: url(https://cdn.custom-cursor.com/db/19718/32/web-media-pokemon-cursor.png), pointer !important;
-}
-
-/* Scrollbar Styles */
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: #222b39;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #fecb04;
-    border-radius: 4px;
-    border: 3px solid rgba(32, 35, 43, 0.95);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #ffdb4d;
 }
 
 h1, h2, h3 {
@@ -43,7 +19,7 @@ h1, h2, h3 {
 .nav-link {
     text-decoration: none !important;
     position: relative;
-    color: #ffffff !important;
+    color: #000000 !important;
 }
 
 .nav-link::after {
@@ -53,7 +29,7 @@ h1, h2, h3 {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #2a75bb;
+    background-color: #ffc107;
     transition: width 0.3s ease;
 }
 
@@ -78,7 +54,7 @@ h1, h2, h3 {
 
 .btn-link.text-white:hover {
     transform: translateX(-5px);
-    color: #2a75bb !important;
+    color: #ffc107 !important;
 }
 
 .featured-modal-quantity{
@@ -523,6 +499,7 @@ p, button {
     animation-delay: 0.5s;
 }
 
+/* Rest of your structural styles */
 .modal-body {
     display: flex;
     flex-direction: column;
@@ -580,7 +557,7 @@ p, button {
 
 .badge {
     padding: 10px;
-    align-items: center; 
+    align-items: center; /* Changed from stretch */
     min-height: 60px;
 }
 
@@ -625,8 +602,8 @@ p, button {
     width: 1px;
     background: #666;
     margin: 0 15px;
-    align-self: center; 
-    height: 25px; 
+    align-self: center; /* Center vertically */
+    height: 25px; /* Relative to container */
   }
 
 .small-text {
@@ -696,7 +673,7 @@ p, button {
 
 .purchase-button {
     position: relative;
-    z-index: 2; 
+    z-index: 2; /* Bring button to front */
 }
 
 
@@ -898,7 +875,7 @@ p, button {
 }
 
 .muted-text {
-    color: #6c757d; 
+    color: #6c757d; /* Bootstrap muted color */
 }
 
 .black-text {
