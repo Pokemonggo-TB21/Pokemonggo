@@ -7,7 +7,7 @@ function animateTrainerId() {
     const trainerIdElement = document.getElementById('trainerId');
     const finalId = generateTrainerId();
     let currentIndex = 0;
-    const interval = 50; // Speed of animation in milliseconds
+    const interval = 50; 
 
     trainerIdElement.textContent = 'Generating...';
     
