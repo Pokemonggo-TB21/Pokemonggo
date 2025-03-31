@@ -1,6 +1,11 @@
 body {
     background: url('Store Images\\Store Background\\background.png') no-repeat center center fixed;
     padding-top: 100px;
+    cursor: url(https://cdn.custom-cursor.com/db/19717/32/web-media-pokemon-pointer.png) , default !important;
+}
+
+a{
+    cursor: url(https://cdn.custom-cursor.com/db/19718/32/web-media-pokemon-cursor.png), pointer !important;
 }
 
 .main-container {
