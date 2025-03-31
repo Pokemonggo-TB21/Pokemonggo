@@ -191,8 +191,8 @@ p, button {
 
 .cart-icon {
     background: #fff;
-    border-radius: 15px;
-    padding: 8px;
+    border-radius: 5px;
+    padding: 2px;
 }
 
 .toggle-btn {
