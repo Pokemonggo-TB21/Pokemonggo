@@ -187,8 +187,14 @@ p, button {
 
 .cart-indicator:hover {
     transform: scale(1.05);
+    transition: .5s ease-in-out;
 }
 
+i.bxs-cart-alt{
+    color: #f8cd45;
+    font-size: 40px;
+    filter: drop-shadow(black 1px 2px 3px);
+}
 
 .toggle-btn {
     background: transparent;
@@ -707,8 +713,8 @@ p, button {
 /* Add cart animation styles */
 .cart-indicator {
     position: fixed !important;
-    top: 20px;
-    right: 20px;
+    top: 12px;
+    right: 12px;
     z-index: 1000;
     display: flex;
     align-items: center;
