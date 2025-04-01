@@ -10,13 +10,13 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="store.css">
     <script src="store.js"></script>
+    <script src="featured-carousel.js"></script>
 </head>
 <body class="bg-dark text-white">
         <!-- Navigation Bar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-white shadow-sm py-3">
             <div class="container">
                 <div class="d-flex align-items-center">
-                    <!-- Logo linking to homepage -->
                     <a class="navbar-brand p-0" href="https://pokemonggo-tb21.github.io/Pokemonggo/HOME PAGE/pokehomesignedin.html">
                         <img src="Store Images\Pokemonggo logo.png" 
                              alt="Store Logo" 
@@ -24,13 +24,16 @@
                              style="height: 40px;">
                     </a>
                     
-                    <!-- Text linking to store -->
                     <a href="store.html" class="nav-link text-dark fw-bold ms-2">
                         Web Store
                     </a>
                 </div>
     
                 <div class="d-flex gap-3">
+                    <a href="#featured" class="nav-link text-dark fw-bold ms-2 text-black">Featured</a>
+                    <a href="#item-boxes" class="nav-link text-dark fw-bold ms-2 text-black">Item Boxes</a>
+                    <a href="#pokecoins" class="nav-link text-dark fw-bold ms-2 text-black">Pokécoins</a>
+                    <a href="#daily-bundles" class="nav-link text-dark fw-bold ms-2 text-black">Daily Bundles</a>
                     <a href="https://store.pokemongolive.com/offer-redemption" 
                        class="nav-link text-dark fw-bold ms-2 text-black">Code Redemption</a>
                     <a href="https://tickets.nianticlabs.com/events/#/eventlisting?appId=pgo" 
@@ -41,51 +44,108 @@
     
         <a href="review.html" class="text-decoration-none">
             <div id="cartIndicator" class="cart-indicator">
-                <span class="cart-count"></span>
+                <span class="cart-count">3</span>
                 <i class='bx bxs-cart-alt'></i>
             </div>
         </a>
 
     <div class="container mt-3">
-        <a class="navbar-brand p-0" href="https://pokemonggo-tb21.github.io/Pokemonggo/HOME PAGE/pokehomepage.html">
-            ← Back to Home
+        <a class="back-to-home" href="https://pokemonggo-tb21.github.io/Pokemonggo/HOME PAGE/pokehomepage.html">
+            <i class='bx bx-arrow-back'></i>
+            Back to Home
         </a>
     </div>
 
     <div class="container py-5">
-        <div class="featured-container">
+        <div class="featured-container" id="featured">
             <h2 class="fw-bold featured-title">FEATURED</h2>
-            <div class="featured-section text-white p-5 rounded d-flex justify-content-between align-items-start">
-                <div class="featured-content">
-                    <h3 class="fw-bold tex">Pokémon GO Fest 2025: Global Ticket</h3>
-                    <p>Can only be purchased 1 time.</p>
-                    <button class="btn btn-warning mt-3">₱439.00</button>
-                </div>
-            
-                <div class="featured-image-container text-end">
-                    <img src="Store Images\\Featured\Featured.webp" alt="Gift Box" class="featured-img">
-                    <div class="featured-badges mt-3">
-                        <div class="featured-badge-group me-3">
-                            <img src="Store Images\\Featured\Featured 1.webp" class="featured-badge-img" alt="Raid Pass">
-                            <div class="featured-number-badge">x3</div>
+            <div id="featuredCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="featured-section text-white p-5 rounded d-flex justify-content-between align-items-start">
+                            <div class="featured-content">
+                                <h3 class="fw-bold tex">Pokémon GO Fest 2025: Global Ticket</h3>
+                                <p>Can only be purchased 1 time.</p>
+                                <button class="btn btn-warning mt-3 featured-btn" data-index="0">₱439.00</button>
+                            </div>
+                            <div class="featured-image-container text-end">
+                                <img src="Store Images\\Featured\Featured.webp" alt="Gift Box" class="featured-img">
+                                <div class="featured-badges mt-3">
+                                    <div class="featured-badge-group me-3">
+                                        <img src="Store Images\\Featured\Featured 1.webp" class="featured-badge-img" alt="Raid Pass">
+                                        <div class="featured-number-badge">x3</div>
+                                    </div>
+                                    <div class="featured-badge-group me-3">
+                                        <img src="Store Images\\Featured\Featured 2.webp" class="featured-badge-img" alt="Incense">
+                                        <div class="featured-number-badge">x5</div>
+                                    </div>
+                                    <div class="featured-badge-group me-3">
+                                        <img src="Store Images\\Featured\Featured 3.webp" class="featured-badge-img" alt="Star Piece">
+                                        <div class="featured-number-badge">x10</div>
+                                    </div>
+                                    <div class="featured-badge-group">
+                                        <img src="Store Images\\Featured\Featured 4.webp" class="featured-badge-img" alt="Lure Module">
+                                        <div class="featured-number-badge">x2</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="featured-badge-group me-3">
-                            <img src="Store Images\\Featured\Featured 2.webp" class="featured-badge-img" alt="Incense">
-                            <div class="featured-number-badge">x5</div>
+                    </div>
+                    <!-- Second Slide -->
+                    <div class="carousel-item">
+                        <div class="featured-section text-white p-5 rounded d-flex justify-content-between align-items-start" style="background-image: url('Store Images/featured_imgs/shadowraid.webp');">
+                            <div class="featured-content">
+                                <h3 class="fw-bold tex">Power Up Ultra Ticket Box</h3>
+                                <p>Can only be purchased 1 time.</p>
+                                <button class="btn btn-warning mt-3 featured-btn" data-index="1">₱289.00</button>
+                            </div>
+                            <div class="featured-image-container text-end">
+                                <img src="Store Images/featured_imgs/bundle.webp" alt="Special Research Bundle" class="featured-img">
+                                <div class="featured-badges mt-3">
+                                    <div class="featured-badge-group me-3">
+                                        <img src="Store Images/featured_imgs/item_event_ticket_07.webp" class="featured-badge-img" alt="Event Ticket">
+                                        <div class="featured-number-badge">x1</div>
+                                    </div>
+                                    <div class="featured-badge-group me-3">
+                                        <img src="Store Images/featured_imgs/item_event_ticket_07.webp" class="featured-badge-img" alt="Event Ticket">
+                                        <div class="featured-number-badge">x1</div>
+                                    </div>
+                                    <div class="featured-badge-group">
+                                        <img src="Store Images/featured_imgs/virtual-currency.webp" class="featured-badge-img" alt="Pokécoins">
+                                        <div class="featured-number-badge">x100</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="featured-badge-group me-3">
-                            <img src="Store Images\\Featured\Featured 3.webp" class="featured-badge-img" alt="Star Piece">
-                            <div class="featured-number-badge">x10</div>
-                        </div>
-                        <div class="featured-badge-group">
-                            <img src="Store Images\\Featured\Featured 4.webp" class="featured-badge-img" alt="Lure Module">
-                            <div class="featured-number-badge">x2</div>
+                    </div>
+                    <!-- Third Slide -->
+                    <div class="carousel-item">
+                        <div class="featured-section text-white p-5 rounded d-flex justify-content-center align-items-center" style="background-image: url('Store Images/featured_imgs/hero_dynamax_launch_event_key_art.webp');">
+                            <div class="featured-content text-center">
+                                <h3 class="fw-bold tex">Discover exclusive offers and get the best value on PokéCoins on the Pokémon GO Web Store!</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#featuredCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
             </div>
+        </div>
         
-        <div class="d-flex justify-content-center gap-3 mb-4 mt-4">
+        <div class="toggle-container">
             <button id="btn-item-boxes" onclick="showSection('item-boxes')" class="btn toggle-btn">ITEM BOXES</button>
             <button id="btn-pokecoins" onclick="showSection('pokecoins')" class="btn toggle-btn active">POKÉCOINS</button>
         </div>
@@ -99,18 +159,43 @@
         </div>
     </div>
     <div class="container py-4">
-        <div class="daily-bundles">
-            <h2 class="fw-bold text-white mb-3">Daily Bundles</h2>
-            <div class="bundles-card bg-white rounded-3 p-4 mx-auto">
-                <img src="Store Images\\Daily Bundle\Daily Bundles.webp" 
-                     class="bundle-item-img" 
-                     alt="Mystery Bundle"
-                     loading="lazy">
-                <h4 class="fw-bold text-dark mt-3">Mystery Boxes</h4>
-                <p class="text-muted small mb-4">3 Daily Bundles</p>
-                <a href="https://pokemonggo-tb21.github.io/Pokemonggo/HOME PAGE/pokehomesignedin.html" class="btn bundle-btn text-decoration-none">
-                    Play to claim!
-                </a>
+        <div class="daily-bundles" id="daily-bundles">
+            <h2 class="fw-bold text-white mb-4">Daily Bundles</h2>
+            <div class="bundles-container">
+                <div class="bundles-card bg-white rounded-4 p-4">
+                    <div class="bundle-content">
+                        <div class="bundle-image-container">
+                            <img src="Store Images\\Daily Bundle\Daily Bundles.webp" 
+                                 class="bundle-item-img" 
+                                 alt="Mystery Boxes"
+                                 loading="lazy">
+                            <div class="bundle-glow"></div>
+                        </div>
+                        <div class="bundle-info">
+                            <h4 class="fw-bold text-dark mb-2">Mystery Boxes</h4>
+                            <p class="text-muted mb-4">3 Daily Bundles</p>
+                            <div class="bundle-features">
+                                <div class="feature-item">
+                                    <i class='bx bx-gift'></i>
+                                    <span>Daily Rewards</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class='bx bx-time'></i>
+                                    <span>24h Cooldown</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class='bx bx-star'></i>
+                                    <span>Special Items</span>
+                                </div>
+                            </div>
+                            <a href="https://pokemonggo-tb21.github.io/Pokemonggo/HOME PAGE/pokehomesignedin.html" 
+                               class="btn bundle-btn text-decoration-none">
+                                <i class='bx bx-play-circle'></i>
+                                Play to claim!
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -130,10 +215,12 @@
         </div>
       </div>
       <div id="featuredModal" class="modal">
-        <div class="modal-content premium-glow">
+        <div class="modal-content">
           <span class="close">&times;</span>
           <div class="modal-body">
-            <img id="featuredModalImage" src="" alt="Featured Item" class="modal-image">
+            <div class="modal-image-container">
+              <img id="featuredModalImage" src="" alt="Featured Item" class="modal-image">
+            </div>
             <div id="featuredModalBadges" class="featured-modal-badges"></div>
             <div class="modal-details">
               <h3 id="featuredModalTitle"></h3>
@@ -181,5 +268,7 @@
             </div>
         </div>
     </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
