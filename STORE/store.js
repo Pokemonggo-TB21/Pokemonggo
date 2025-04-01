@@ -1,12 +1,29 @@
-function showSection(section) {
+function showSection(sectionId) {
     document.getElementById('item-boxes').classList.add('d-none');
     document.getElementById('pokecoins').classList.add('d-none');
-    document.getElementById(section).classList.remove('d-none');
     
     document.getElementById('btn-item-boxes').classList.remove('active');
     document.getElementById('btn-pokecoins').classList.remove('active');
-    document.getElementById('btn-' + section).classList.add('active');
+    
+    const selectedSection = document.getElementById(sectionId);
+    selectedSection.classList.remove('d-none');
+    
+    document.getElementById(`btn-${sectionId}`).classList.add('active');
+    
+    selectedSection.offsetHeight;
+    
+    selectedSection.classList.add('show');
+    
+    const otherSection = sectionId === 'item-boxes' ? 'pokecoins' : 'item-boxes';
+    const otherElement = document.getElementById(otherSection);
+    if (otherElement) {
+        otherElement.classList.remove('show');
+    }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('pokecoins').classList.add('show');
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     const itemBoxes = [
@@ -263,7 +280,6 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>`;
 });
 
-    // Render Pokécoins with proper styling
     pokecoins.forEach((coin, index) => {
         pokecoinContainer.innerHTML += `
             <div class="col">
@@ -281,9 +297,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-// Modify your handlePurchase function
 function handlePurchase(item, event) {
-    // Update cart count
     const cartCount = document.querySelector('.cart-count');
     let currentCount = parseInt(cartCount.textContent) || 0;
     currentCount++;
@@ -291,12 +305,12 @@ function handlePurchase(item, event) {
     cartCount.textContent = currentCount;
     cartCount.classList.toggle('active', currentCount > 0);
 
-    // Create flying item
+    showNotification('Item added to cart!');
+
     const flyingItem = document.createElement('img');
     flyingItem.src = item.img;
     flyingItem.className = 'fly-to-cart';
     
-    // Set initial position (viewport coordinates)
     flyingItem.style.cssText = `
         position: fixed;
         left: ${event.clientX}px;
@@ -309,7 +323,6 @@ function handlePurchase(item, event) {
         transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     `;
 
-    // Calculate target position relative to viewport
     const cartIndicator = document.getElementById('cartIndicator');
     const cartRect = cartIndicator.getBoundingClientRect();
     const targetX = cartRect.left + cartRect.width/2 - event.clientX;
@@ -317,7 +330,6 @@ function handlePurchase(item, event) {
 
     document.body.appendChild(flyingItem);
 
-    // Trigger animation
     requestAnimationFrame(() => {
         flyingItem.style.transform = `
             translate(${targetX}px, ${targetY}px)
@@ -326,22 +338,18 @@ function handlePurchase(item, event) {
         flyingItem.style.opacity = '0';
     });
 
-    // Cleanup after animation
     setTimeout(() => {
         flyingItem.remove();
     }, 800);
 
-    // Close modal
     document.getElementById('itemModal').style.display = 'none';
 }
 
-// ========== MODAL SETUP ==========
+
 function setupModal(item, isPokecoin = false) {
-    // Core content
     document.getElementById('modalImage').src = item.img;
     document.getElementById('modalTitle').textContent = item.title;
     
-    // Content type handling
     if(isPokecoin) {
         document.getElementById('purchaseLimit').textContent = item.limit || 'UNLIMITED';
         document.getElementById('itemSubtitle').textContent = item.desc;
@@ -359,11 +367,9 @@ function setupModal(item, isPokecoin = false) {
         ).join('');
     }
 
-    // Purchase button setup
     const purchaseButton = document.getElementById('purchaseButton');
     purchaseButton.innerHTML = `₱${item.price.toFixed(2)}<div class="small-text">Purchase Now</div>`;
     
-    // Single click handler
     purchaseButton.onclick = (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -371,7 +377,6 @@ function setupModal(item, isPokecoin = false) {
         document.getElementById('itemModal').style.display = 'none';
     };
 
-    // Premium styling
     const modal = document.getElementById('itemModal');
     modal.classList.toggle('premium-glow', 
         (isPokecoin && item.title.includes("15,500")) || 
@@ -380,8 +385,7 @@ function setupModal(item, isPokecoin = false) {
     modal.style.display = 'block';
 }
 
-// ========== EVENT HANDLERS ==========
-// Item boxes
+
 document.querySelectorAll('#item-box-list .floating-card').forEach((card, index) => {
     card.addEventListener('click', (e) => {
         if(!e.target.closest('.price-btn')) {
@@ -390,7 +394,6 @@ document.querySelectorAll('#item-box-list .floating-card').forEach((card, index)
     });
 });
 
-// Pokécoins
 document.querySelectorAll('#pokecoin-list .floating-card').forEach((card, index) => {
     card.addEventListener('click', (e) => {
         if(!e.target.closest('.pokecoin-price')) {
@@ -399,7 +402,6 @@ document.querySelectorAll('#pokecoin-list .floating-card').forEach((card, index)
     });
 });
 
-// Price buttons
 document.querySelectorAll('.price-btn, .pokecoin-price').forEach((btn, index) => {
     btn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -410,7 +412,6 @@ document.querySelectorAll('.price-btn, .pokecoin-price').forEach((btn, index) =>
     });
 });
 
-// Modal close
 document.querySelector('.close').addEventListener('click', () => {
     document.getElementById('itemModal').style.display = 'none';
     document.getElementById('itemModal').classList.remove('premium-glow');
@@ -423,14 +424,12 @@ window.onclick = (event) => {
     }
 };
 
-// Featured Section Click Handler
 document.querySelector('.featured-section').addEventListener('click', (e) => {
     if(!e.target.closest('.btn')) {
         showFeaturedModal();
     }
 });
 
-// Featured Price Button Handler
 document.querySelector('.featured-section .btn').addEventListener('click', (e) => {
     e.stopPropagation();
     showFeaturedModal();
@@ -439,13 +438,11 @@ document.querySelector('.featured-section .btn').addEventListener('click', (e) =
 function showFeaturedModal() {
     const modal = document.getElementById('featuredModal');
     
-    // Set content
     modal.querySelector('#featuredModalImage').src = featuredItem.img;
     modal.querySelector('#featuredModalTitle').textContent = featuredItem.title;
     modal.querySelector('#featuredSubtitle').textContent = featuredItem.subtitle;
     modal.querySelector('#featuredPurchaseLimit').textContent = featuredItem.limit;
 
-    // Badges
     const badgesContainer = modal.querySelector('#featuredModalBadges');
     badgesContainer.innerHTML = featuredItem.badges.map(badge => `
         <div class="featured-modal-badge">
@@ -454,30 +451,119 @@ function showFeaturedModal() {
         </div>
     `).join('');
 
-    // Price button
     const purchaseButton = modal.querySelector('#featuredPurchaseButton');
     purchaseButton.innerHTML = `₱${featuredItem.price.toFixed(2)}<div class="small-text">Purchase Now</div>`;
     purchaseButton.onclick = (e) => {
         e.preventDefault();
         e.stopPropagation();
         handlePurchase(featuredItem, e);
+        showNotification('Featured item added to cart!');
         modal.style.display = 'none';
     };
 
     modal.style.display = 'block';
 }
 
-// Update close handlers
 document.querySelectorAll('.modal .close').forEach(btn => {
     btn.addEventListener('click', () => {
         document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
     });
 });
 
-// Close modals when clicking outside
 window.onclick = (event) => {
     if(event.target.classList.contains('modal')) {
         event.target.style.display = 'none';
     }
 };
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.featured-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const index = parseInt(button.getAttribute('data-index'));
+            openFeaturedModal(index);
+        });
+    });
+
+    document.querySelectorAll('.featured-section').forEach(section => {
+        section.addEventListener('click', (e) => {
+            if (!e.target.closest('.featured-btn')) {
+                const button = section.querySelector('.featured-btn');
+                const index = parseInt(button.getAttribute('data-index'));
+                openFeaturedModal(index);
+            }
+        });
+    });
+});
+
+document.querySelector('#featuredModal .close').onclick = function() {
+    document.getElementById('featuredModal').style.display = "none";
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById('featuredModal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+});
+
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.innerHTML = `
+        <i class='bx bx-check-circle'></i>
+        <p>${message}</p>
+    `;
+
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 100);
+
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            notification.remove();
+        }, 300);
+    }, 3000);
+}
+
+function purchaseItem(item) {
+    showNotification('Item added to cart!');
+}
+
+function purchasePokecoin(amount) {
+    showNotification('Pokécoins added to cart!');
+}
+
+function purchaseFeaturedItem(item) {
+    showNotification('Featured item added to cart!');
+}
+
+const cartIndicator = document.getElementById('cartIndicator');
+const cartCount = document.querySelector('.cart-count');
+
+if (cartCount.textContent > 0) {
+    cartIndicator.classList.add('has-items');
+}
+
+cartIndicator.addEventListener('mouseenter', function() {
+    this.querySelector('i').style.transform = 'scale(1.1)';
+});
+
+cartIndicator.addEventListener('mouseleave', function() {
+    this.querySelector('i').style.transform = 'scale(1)';
+});
+
+cartIndicator.addEventListener('click', function() {
+    this.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        this.style.transform = 'scale(1)';
+    }, 100);
 });
